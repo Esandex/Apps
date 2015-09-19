@@ -15,8 +15,9 @@
 
 		if(tarea === "")
 		{
-			tareaInput.setAttribute("placeholder", "Agrega una tarea valida");
-			tareaInput.className = "error";
+			swal("Agrega una tarea valida","por favor");
+			//tareaInput.setAttribute("placeholder", "Agrega una tarea valida");
+			//tareaInput.className = "error";
 			return false;
 		}
 

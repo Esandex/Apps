@@ -7,7 +7,7 @@
 }
 
 body {
-  background: url("himalaya.jpg") #000;
+  background: url("../img/himalaya.jpg") #000;
   background-size: cover;
   color: #fff;
   font-size: 16px;

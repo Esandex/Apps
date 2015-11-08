@@ -3,24 +3,38 @@
 	padding: 0;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	 box-sizing: border-box;
-}
+	box-sizing: border-box;
+	
+
+
+
+  }
 
 body 
 {
-	background: url('../img/himalaya.jpg') #000;
-	background-size:cover;
+	background: url('../img/imagen4.jpg') #000;
+	background-position: center top;
 	color: #fff;
 	font-size: 16px;
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .wrap 
 {
+	display: flex;
+    justify-content: center;
+    align-items: center;
 	width: 95%;
 	max-width: 1000px;
-	margin: auto;
-
+	/*margin: auto;*/
+	
 	.widget
 	{
 		width: 302px;
@@ -62,6 +76,70 @@ body
 					display: block;
 				}
 			}
+		}
+	}
+}
+
+.cerrar
+{
+	font-size: 18px;
+    position: absolute;
+    top: -3px;
+    right: 121px;
+    background-color: black;
+    padding: 12px;
+    &:hover
+    {
+    	cursor:pointer;
+    	color: #fff;
+    	background-color: red;
+    }
+}
+.titulo_galeria
+{
+	background-color: #000;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    width: 119px;
+    z-index: 100;
+    right: 0px;
+    &:hover
+    {
+    	cursor:pointer;
+    	color: #fff;
+    	background-color:red;
+    }
+}
+.galeria_miniaturas
+{
+    display: none;
+	position: absolute;
+    top: 41px;
+    right: 0;
+    overflow-y: scroll;
+    height: 92%;
+    border: 1px solid #eaeaea;
+
+  
+  	
+
+	img 
+	{
+		width: 80px;
+		height: 60px;
+		display: block;
+		margin: 10px;
+		cursor: pointer;
+		&:hover
+		{
+			width: 85px;
+			-webkit-transition:all .3s ease;
+	     	-O-transition:all .3s ease;
+	     	transition:all .3s ease;
+
 		}
 	}
 }

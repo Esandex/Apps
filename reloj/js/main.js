@@ -23,10 +23,38 @@ function menu(){
 
 function cambiarImg(obj){
 	var objeto = obj;
+	
 	var css = {
 		'background-image': 'url(img/' + objeto + ')'
-	}
-	console.log(css);
-	$('body').css(css);
-}
 	
+	}
+
+	localStorage.setItem('imagen',objeto);
+	var imgGuardada = localStorage.getItem(objeto);
+
+	console.log(imgGuardada);
+
+	//console.log(css);
+
+	$('body').css(css);
+
+	//console.log(objeto);
+}
+
+
+/*$(document).ready(function() {
+
+	var guardar = document.getElementById("guardar");
+		if (localStorage.setItem('guardar',guardar) = true) 
+		{
+			
+		}
+		else
+		{
+
+		}
+   			localStorage.setItem('css',css);
+   			var imagenGuardada = localStorage.getItem('css');
+	});
+
+*/

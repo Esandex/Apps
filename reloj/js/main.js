@@ -2,6 +2,7 @@ $(document).on('ready', inicio);
 function inicio()
 {	
 	$('.boton').on('click', menu);	
+	verificarImg();
 }
 	
 function menu(){
@@ -30,31 +31,30 @@ function cambiarImg(obj){
 	}
 
 	localStorage.setItem('imagen',objeto);
-	var imgGuardada = localStorage.getItem(objeto);
+	var imgGuardada = localStorage.getItem('imagen');
 
 	console.log(imgGuardada);
 
-	//console.log(css);
+	console.log(css);
 
 	$('body').css(css);
 
-	//console.log(objeto);
+	console.log(objeto);
+}
+
+function verificarImg(imgD)
+{
+	
+	
+	var imgGuardada = localStorage.getItem('imagen');
+	if( imgGuardada == null)
+	{
+		localStorage.setItem('imagen');	
+	}
+	else
+	{
+		
+	}
 }
 
 
-/*$(document).ready(function() {
-
-	var guardar = document.getElementById("guardar");
-		if (localStorage.setItem('guardar',guardar) = true) 
-		{
-			
-		}
-		else
-		{
-
-		}
-   			localStorage.setItem('css',css);
-   			var imagenGuardada = localStorage.getItem('css');
-	});
-
-*/

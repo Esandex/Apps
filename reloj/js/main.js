@@ -27,7 +27,6 @@ function cambiarImg(obj){
 	
 	var css = {
 		'background-image': 'url(img/' + objeto + ')'
-	
 	}
 
 	localStorage.setItem('imagen',objeto);
@@ -42,18 +41,28 @@ function cambiarImg(obj){
 	console.log(objeto);
 }
 
-function verificarImg(imgD)
+function verificarImg()
 {
 	
-	
 	var imgGuardada = localStorage.getItem('imagen');
-	if( imgGuardada == null)
+	console.log(imgGuardada);
+	var imgDefecto = 'imagen1.jpg';
+	var cssDefecto = {
+			'background-image': 'url(img/' + imgDefecto + ')'
+		}
+	if(imgGuardada == null)
 	{
-		localStorage.setItem('imagen');	
+		console.log('es null');
+		localStorage.setItem('imagen', imgDefecto);	
+		$('body').css(cssDefecto);
 	}
 	else
 	{
-		
+		console.log('entro en el else');
+		var cssActual = {
+			'background-image': 'url(img/' + imgGuardada + ')'
+		}
+		$('body').css(cssActual);
 	}
 }
 

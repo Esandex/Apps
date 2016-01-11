@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset ($_SESSION['validacion']) && $_SESSION['validacion'] == 1) {
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<script src="js/sweetalert-dev.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
-	<link rel="stylesheet"  href="css/main.css">
+	<link rel="stylesheet"  href="../css/main.css">
 
 	
   
@@ -18,6 +22,7 @@
 			<form action="" class="formulario">
 				<input type="text" id="tareaInput" placeholder="Agrega tu tarea">
 				<input type="button" class="boton" id="btn-agregar" value="Agregar tarea">
+				
 			</form> 
 		</div>
 	</div>
@@ -30,6 +35,11 @@
 			</ul>
 		</div>
 	</div>
-	<script src="js/main.js"></script>
+	<script src="../js/main.js"></script>
 </body>
 </html>
+<?php
+}else{
+    echo"Debes iniciar sesion antes de acceder a esta página"; 
+}
+?>

@@ -1,1 +1,107 @@
-*{margin:0;padding:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}body{background:#fafafa;font-family:arial,helvetica,sans-serif;font-size:16px}.wrap{margin:auto;max-width:800px;width:90%}.principal{background:#f44336;border-top:20px solid #d32f2f;color:#fff;padding:50px 0;width:100%}.principal .formulario{color:#212121;text-align:center}.principal .formulario input[type=text]{margin-bottom:20px;padding:10px;width:100%}.principal .formulario input[type=text].error{border:5px solid #d32f2f;color:#ff0000}.principal .formulario .boton{background:none;border:1px solid #d32f2f;color:#fff;display:inline-block;font-size:16px;padding:15px}.principal .formulario .boton:hover{border:1px solid #fff}.tareas .lista{list-style:none}.tareas .lista li{border-bottom:1px solid #b6b6b6}.tareas .lista li a{color:#212121;display:block;padding:20px 0;text-decoration:none}.tareas .lista li a:hover{text-decoration:line-through}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\000031}}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\000039}}
+body {
+  font-family: arial,helvetica, sans-serif;
+  font-size: 16px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000318}}
+.contenedor {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000324}}
+  .contenedor .icono {
+    background-color: #f44336;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000334}}
+  .contenedor h1 {
+    text-align: center;
+    position: absolute;
+    top: 65px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000341}}
+  .contenedor form {
+    max-width: 500px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000344}}
+    .contenedor form input[type=text], .contenedor form input[type=password] {
+      width: 100%;
+      height: 40px;
+      padding: 5px;
+      box-sizing: border-box;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #E9E9E9 #E9E9E9 #727272; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000357}}
+.wrap {
+  margin: auto;
+  max-width: 800px;
+  width: 90%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000363}}
+.principal {
+  background: #f44336;
+  border-top: 20px solid #d32f2f;
+  color: #fff;
+  padding: 50px 0;
+  width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000371}}
+  .principal .formulario {
+    color: #212121;
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000376}}
+    .principal .formulario input[type=text] {
+      margin-bottom: 20px;
+      padding: 10px;
+      width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000382}}
+    .principal .formulario input[type=text].error {
+      border: 5px solid #d32f2f;
+      color: #ff0000; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000387}}
+    .principal .formulario .boton {
+      background: none;
+      border: 1px solid #d32f2f;
+      color: #fff;
+      display: inline-block;
+      font-size: 16px;
+      padding: 15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000395}}
+      .principal .formulario .boton:hover {
+        border: 1px solid #fff; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003104}}
+.tareas .lista {
+  list-style: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003108}}
+  .tareas .lista li {
+    border-bottom: 1px solid #b6b6b6; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003112}}
+    .tareas .lista li a {
+      color: #212121;
+      display: block;
+      padding: 20px 0;
+      text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003118}}
+      .tareas .lista li a:hover {
+        text-decoration: line-through; }
+
+/*# sourceMappingURL=main.css.map */

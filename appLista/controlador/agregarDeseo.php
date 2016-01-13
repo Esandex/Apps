@@ -1,8 +1,8 @@
 <?php
 include('../modelo/conexion.php');
-$tarea = $_POST['tarea'];
+$des = $_POST['des'];
 
 $var = new conexion();
-$var->agregarTarea($tarea);
+$var->agregarDeseo($des);
 $var->cerrar();
 ?>

@@ -103,13 +103,13 @@
 		}
 	}
 	
-	///AGREGAR DESEO
+	///AGREGAR Tareas
 
-	public function agregarTarea($titulo, $tarea){
+	public function agregarTarea($tarea){
 
 		//que la tarea no exista
 		  session_start();
-       $res =  $this->conexion->query("select titulo, usuarios_id from tareas where titulo = '".$titulo."' and usuarios_id = '".$_SESSION['id']."' ");
+       $res =  $this->conexion->query("select descripcion, usuarios_id from tareas where descripcion = '".$tarea."' and usuarios_id = '".$_SESSION['id']."' ");
         
         if(mysqli_num_rows($res)>0)
         {
@@ -117,8 +117,8 @@
             echo '1';
         }else{
             //Registrar el deseo
-            $this->conexion->query("insert into tareas(titulo, descripcion, usuarios_id) values('".$titulo."', '".$tarea."', '".$_SESSION['id']."')");
-            echo "Se registro el deseo";
+            $this->conexion->query("insert into tareas(descripcion, usuarios_id) values('".$tarea."', '".$_SESSION['id']."')");
+            echo "Se registro la tarea";
         }
 
 	}

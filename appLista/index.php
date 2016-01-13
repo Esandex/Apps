@@ -1,6 +1,6 @@
 <?php
-session_start();
-if(isset ($_SESSION['validacion']) && $_SESSION['validacion'] == 1) { // se modifico la validacion de la sessión
+	session_start();
+	if(isset ($_SESSION['validacion']) && $_SESSION['validacion'] == 1) { // se modifico la validacion de la sessión
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,14 +16,18 @@ if(isset ($_SESSION['validacion']) && $_SESSION['validacion'] == 1) { // se modi
 </head>
 <body>
 	
+
+
 	<div class="principal">
-		<p id ="title">Bienvenido
-			<?php
-			    echo $_SESSION['nombre'] ;
-			    echo " " ;
-			    echo $_SESSION['apellido'];
-		    ?>
-    </p>
+			<a href ="vista/login.php" class="cerrar-sesion">Cerrar Sesion</a>
+			<p class ="title">Bienvenido
+				<?php
+				    echo $_SESSION['nombre'] ;
+				    echo " " ;
+				    echo $_SESSION['apellido'];
+			    ?>
+    		</p>
+	
 		<div class="wrap">
 			<form action="" class="formulario">
 				<input type="text" id="tareaInput" placeholder="Agrega tu tarea">
@@ -35,9 +39,7 @@ if(isset ($_SESSION['validacion']) && $_SESSION['validacion'] == 1) { // se modi
 	<div class="tareas">
 		<div class="wrap">
 			<ul id="lista" class="lista">
-				<li><a href="#">Soy la lista uno</a></li>
-				<li><a href="#">Soy la lista dos</a></li>
-				<li><a href="#">Soy la lista tres</a></li>
+			
 			</ul>
 		</div>
 	</div>
@@ -51,3 +53,6 @@ if(isset ($_SESSION['validacion']) && $_SESSION['validacion'] == 1) { // se modi
     header("Location: vista/login.php");
 }
 ?>
+
+
+

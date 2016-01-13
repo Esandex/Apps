@@ -93,13 +93,37 @@ body
 	max-width: 800px;
 	width: 90%;
 }
+
 .principal
 {
-	background: #f44336;
+	background:#f44336;
 	border-top:20px solid #d32f2f;
 	color: #fff;
 	padding: 50px 0;
 	width: 100%; 
+
+	.cerrar-sesion{
+		    color: #FFF;
+		    display: inline-block;
+		    background-color: #16A085;
+		    text-decoration: none;
+		    width: 138px;
+		    padding: 12px;
+		    position: relative;
+		    left: 20px;
+		    top: -48px;
+
+		&:hover{
+			background-color:#e67e22;
+		}
+	}
+	.title
+	{
+		text-align: center;
+		margin: 5px;
+	}
+
+	
 
 	.formulario
 	{

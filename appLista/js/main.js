@@ -13,9 +13,10 @@ $(document).ready(function(){
 				data:{usuario: user, pass: pass},
 				success: function(msg){
 					if (msg == '1'){
-						$('#mensaje').html('datos incorrectos');
+						$('#mensaje').html('Datos incorrectos');
 					}else{
-						window.location = msg;
+						$('#mensaje').html('Bienvenido ' + msg);
+						setTimeout(function(){window.location.href = '../';},3000);
 					}
 				}
 			});
@@ -24,7 +25,7 @@ $(document).ready(function(){
 		}else{
 			$('#mensaje').html('Ingrese los datos');
 		}
-
+		return false;
 	});
 
 });

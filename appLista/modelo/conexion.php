@@ -27,7 +27,15 @@
 		$this->user = $usuario;
 		$this->password = $pass;
 
-		$query = "select id, nombre, apellido, usuario, clave, rol_id1 from usuarios where usuario = '".$this->user."' and clave = '".$this->password."'";
+		$query = "select 	id, 
+							nombre, 
+							apellido, 
+							usuario, 
+							clave, 
+							rol_id1 
+				  from usuarios 
+				  where usuario = '".$this->user."' 
+				  and clave = '".$this->password."'";
 
 		$consulta = $this->conexion->query($query);
 
@@ -44,7 +52,7 @@
             $_SESSION['apellido'] = $row['apellido'];
             $_SESSION['id'] = $row['id'];
 
-			echo "../index.php";
+			echo $row['nombre']; 
 
 		}else if($row['rol_id1'] == 2){//operario
 
@@ -55,7 +63,7 @@
             $_SESSION['apellido'] = $row['apellido'];
             $_SESSION['id'] = $row['id'];
 
-			echo "../index.php"; 
+			echo $row['nombre']; 
 
 		}else{
 

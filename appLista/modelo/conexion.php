@@ -1,7 +1,7 @@
 <?php 
 	class conexion{
 		private $conexion;
-		private $server = "localhost";
+		private $server = "esandex.com";
 		private $usuario = "esandex_admin";
 		private $pass = "w8uiq9da";
 		private $db = "esandex_apptareas";

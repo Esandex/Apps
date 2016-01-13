@@ -14,10 +14,17 @@ $(document).ready(function(){
 				success: function(msg){
 					if (msg == '1'){
 						$('#mensaje').html('Datos incorrectos');
-					}else{
-						$('#mensaje').html('Bienvenido ' + msg);
-						setTimeout(function(){window.location.href = '../';},3000);
-					}
+					}else 
+						if(msg.search(/mysql/) > -1 )
+						{
+							$('#mensaje').html(msg);
+						}
+						else
+						{
+							$('#mensaje').html('Bienvenido ' + msg);
+							setTimeout(function(){window.location.href = '../';},3000);
+							
+						}
 				}
 			});
 

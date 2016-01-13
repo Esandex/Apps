@@ -22,7 +22,7 @@ $(document).ready(function(){
 						else
 						{
 							$('#mensaje').html('Bienvenido ' + msg);
-							//setTimeout(function(){window.location.href = '../';},3000);
+							setTimeout(function(){window.location.href = '../';},3000);
 							
 						}
 				}

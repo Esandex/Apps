@@ -2,9 +2,9 @@
 	class conexion{
 		private $conexion;
 		private $server = "localhost";
-		private $usuario = "esandex_admin";
-		private $pass = "w8uiq9da";
-		private $db = "esandex_apptareas";
+		private $usuario = "root";
+		private $pass = "admin";
+		private $db = "apptareas";
 		private $user;
 		private $password;
 
@@ -44,7 +44,7 @@
             $_SESSION['apellido'] = $row['apellido'];
             $_SESSION['id'] = $row['id'];
 
-			echo "../index.php";
+			echo "menu.php";
 
 		}else if($row['rol_id1'] == 2){//operario
 
@@ -55,7 +55,7 @@
             $_SESSION['apellido'] = $row['apellido'];
             $_SESSION['id'] = $row['id'];
 
-			echo "../index.php"; 
+			echo "menu.php"; 
 
 		}else{
 

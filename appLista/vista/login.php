@@ -10,40 +10,35 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="HandheldFriendly" content="true" />
 	<title>Inicio</title>
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
 <body>
-		<div id="formulario">
-			<h1>Iniciar sesión</h1>
-			<br><br>
-			<div class="login">
-				<form action= "../controlador/login.php" method="POST">
-					<fieldset>
-						<h2>Login</h2>
+	<div class="contenedor" id="formulario">
 
-							<p>
-								<input type="text" class="usuario" placeholder = "Usuario" title = "Escribe un usuario" required>
-							</p>
-							<p>
-								<input type="password" class="clave" name = "pass" placeholder = "Usuario" title = "Escribe una contraseña" required>
+				
 
-							</p>
-							<p>
-								<button type="button" id="envia">Ingresar</button> 
-								<input type="reset" value="Limpiar">
-							</p>
+				<div class="icono"></div>
+						
+				<form action= "../controlador/login.php" name="valida" method="POST" enctype="">
 
-							<p id="mensaje" style="color:red;"></p>
-							<p>
-								<a href="crear.html">
-									Crear Cuenta
-								</a>
-							</p>
-					</fieldset>
+								<h1>Bienvenido</h1>	
+								<div class="grupo">
+									<label for="name">Usuario</label>
+									<input type="text" class="usuario" placeholder = "Usuario" title = "Escribe un usuario" required>	
+								</div>
+
+								<div class="grupo">
+									<label for="email">Contraseña</label>
+									<input type="password" class="clave" name = "pass" placeholder = "Contraseña" title = "Escribe una contraseña" required>
+								</div>
+								
+								<button class="button" type="button" name="enviar" id="envia">Ingresar</button> 
+								<p id="mensaje" style="color:red;"></p>
+							
 				</form>
-			</div>
+
 		</div>
 </body>
-<script src="../js/jquery.js"></script>
-<script src="../js/main.js"></script>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/main.js"></script>
 </html>

@@ -15,21 +15,27 @@
 <body>
 		
 		<div class="contenedor" id="formulario">
-			
-				<div class="icono"></div>
-				<h1>Bienvenido</h1>			
-				<form action= "../controlador/login.php" method="POST">
+
 				
-								<input type="text" class="usuario" placeholder = "Usuario" title = "Escribe un usuario" required>
-								<input type="password" class="clave" name = "pass" placeholder = "Usuario" title = "Escribe una contraseña" required>
-								<input type="button" id="envia" Value="Ingresar"> 
-								<input type="reset" value="Limpiar">
-							<p id="mensaje" style="color:red;"></p>
-							<p>
-								<a href="crear.html">
-									Crear Cuenta
-								</a>
-							</p>
+
+				<div class="icono"></div>
+						
+				<form action= "../controlador/login.php" name="valida" method="POST" enctype="">
+
+								<h1>Bienvenido</h1>	
+								<div class="grupo">
+									<label for="name">Usuario</label>
+									<input type="text" class="usuario" placeholder = "Usuario" title = "Escribe un usuario" required>	
+								</div>
+
+								<div class="grupo">
+									<label for="email">Contraseña</label>
+									<input type="password" class="clave" name = "pass" placeholder = "Contraseña" title = "Escribe una contraseña" required>
+								</div>
+								
+								<button class="button" type="button" name="enviar" id="envia">Ingresar</button> 
+								<p id="mensaje" style="color:red;"></p>
+							
 				</form>
 
 		</div>

@@ -32,51 +32,76 @@ body {
     position: absolute;
     top: 0px;
     left: 0px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000334}}
-  .contenedor h1 {
-    text-align: center;
-    position: absolute;
-    top: 65px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000336}}
   .contenedor form {
     max-width: 500px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000344}}
-    .contenedor form input[type=text], .contenedor form input[type=password] {
-      width: 100%;
-      height: 40px;
-      padding: 5px;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000340}}
+    .contenedor form h1 {
+      text-align: center;
+      position: relative;
+      color: red;
+      top: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000348}}
+    .contenedor form .grupo {
+      margin: 15px 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000352}}
+      .contenedor form .grupo label {
+        font-size: 13px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000358}}
+      .contenedor form .grupo input[type=text], .contenedor form .grupo input[type=password] {
+        width: 100%;
+        height: 40px;
+        padding: 5px;
+        box-sizing: border-box;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #E9E9E9 #E9E9E9 #727272; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000369}}
+    .contenedor form .button {
+      background-color: #f44336;
+      border: 0px none;
+      box-shadow: 0px 5px 0px #e12121;
       box-sizing: border-box;
-      border-width: 1px;
-      border-style: solid;
-      border-color: #E9E9E9 #E9E9E9 #727272; }
+      color: #E9E9E9;
+      margin: 1em 0px;
+      padding: 10px;
+      -webkit-transition: all 0.3s ease 0s;
+              transition: all 0.3s ease 0s;
+      width: 250px;
+      font-size: 1em;
+      width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000382}}
+      .contenedor form .button:hover {
+        background-color: #c0392b;
+        box-shadow: -1px 5px 0px #b12121; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000390}}
 .wrap {
   margin: auto;
   max-width: 800px;
   width: 90%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000396}}
 .principal {
   background: #f44336;
   border-top: 20px solid #d32f2f;
   color: #fff;
   padding: 50px 0;
   width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003104}}
   .principal .formulario {
     color: #212121;
     text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003109}}
     .principal .formulario input[type=text] {
       margin-bottom: 20px;
       padding: 10px;
       width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003115}}
     .principal .formulario input[type=text].error {
       border: 5px solid #d32f2f;
       color: #ff0000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003120}}
     .principal .formulario .boton {
       background: none;
       border: 1px solid #d32f2f;
@@ -84,23 +109,23 @@ body {
       display: inline-block;
       font-size: 16px;
       padding: 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003128}}
       .principal .formulario .boton:hover {
         border: 1px solid #fff; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003137}}
 .tareas .lista {
   list-style: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003141}}
   .tareas .lista li {
     border-bottom: 1px solid #b6b6b6; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003112}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003145}}
     .tareas .lista li a {
       color: #212121;
       display: block;
       padding: 20px 0;
       text-decoration: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003118}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/Apps\/tareas\/css\/main\.scss}line{font-family:\00003151}}
       .tareas .lista li a:hover {
         text-decoration: line-through; }
 

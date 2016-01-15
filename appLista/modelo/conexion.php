@@ -1,10 +1,10 @@
 <?php 
 	class conexion{
 		private $conexion;
-		private $server = "esandex.com";
-		private $usuario = "esandex_admin";
-		private $pass = "w8uiq9da";
-		private $db = "esandex_apptareas";
+		private $server = "localhost";
+		private $usuario =  "root";//"esandex_admin";
+		private $pass = "admin";//"w8uiq9da";
+		private $db = "apptareas";//"esandex_apptareas";
 		private $user;
 		private $password;
 
@@ -117,26 +117,27 @@
             echo '1';
         }else{
             //Registrar el deseo
-            $this->conexion->query("insert into tareas(descripcion, usuarios_id) values('".$tarea."', '".$_SESSION['id']."')");
+            $this->conexion->query("insert into tareas(descripcion, usuarios_id) values( '".$tarea."', '".$_SESSION['id']."')");
             echo "Se registro la tarea";
         }
 
 	}
 
-		public function eliminarDeseo($titulo)
+		public function eliminarTarea($id)
 		{
 			session_start();
 			//Validar si existe el deseo
-			$res = $this->conexion->query("select titulo, usuarios_id from tareas where titulo = '".$titulo."' and usuarios_id = '".$_SESSION['id']."'");
+			$res = $this->conexion->query("select id from tareas where id = '".$id."' and usuarios_id = '".$_SESSION['id']."'");
 			
 			if(mysqli_num_rows($res ) > 0){
 				//existe el deseo
-				$this->conexion->query("delete from tareas where titulo = '".$titulo."' and usuarios_id= '".$_SESSION['id']."'");
+				$this->conexion->query("UPDATE from tareas where id = '".$id."'");
 				echo "Se elimino la tarea";
 			}else{
-				//el deseo existe
-				echo "1";
-			}			
+				//la tarea no existe
+				echo "la tarea no existe";
+			}		
+			
 		}
 
 		public function modificarTarea($titulo, $tarea){
@@ -158,12 +159,12 @@
 
 		public function listarTareas(){
 			//session_start();
-			$consulta = $this->conexion->query("select titulo, descripcion from tareas where usuarios_id = '".$_SESSION['id']."'");
+			$consulta = $this->conexion->query("select descripcion from tareas where usuarios_id = '".$_SESSION['id']."'");
 
 			while ($row = mysqli_fetch_array($consulta)) {
-				echo "<tr>";
-				echo "<td>" . $row['titulo'] . "</td><td>". $row['descripcion']. "</td>";
-				echo "</tr>";
+			
+				echo "<li> <a>". $row['descripcion']. "</a> </li>";
+			
 			}
 		}
 

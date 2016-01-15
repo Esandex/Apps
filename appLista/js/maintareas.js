@@ -6,8 +6,8 @@
 	bntNuevaTarea = document.getElementById("btn-agregar");
 
 	//funciones
-	var agregarTarea = function()
-	{
+	 function agregarTarea()
+	 {
 		var tarea = tareaInput.value, 
 		nuevaTarea = document.createElement("li"),
 		enlace = document.createElement("a"),
@@ -47,7 +47,7 @@
             	success: function(msg){
                		if(msg == '1'){
                    	//Error
-                   		$('#mensaje').html('El deseo que ingresaste ya se encuentra registrado');
+                   		$('#mensaje').html('La tarea que ingresaste ya se encuentra registrada');
                		}else{
                    //Se registro
                    $('#mensaje').html(msg);
@@ -57,12 +57,23 @@
 
 			}
 	};
-	var comprobarInput  = function(){
+	function comprobarInput(){
 		tareaInput.className = "";
 		tareaInput.setAttribute("placeholder","Agrega tu tarea");
 	};
-	var eliminarTarea = function(){
+	function eliminarTarea(){
+		
 		this.parentNode.removeChild(this);
+
+		$.ajax({
+         	   	url: '../appLista/controlador/eliminarTarea.php',
+            	method: 'POST',
+            	data: { titulo: tarea },
+            	success: function(msg){
+               		console.log(msg);
+            	}
+        	});		
+
 	};
 	//eventos
 

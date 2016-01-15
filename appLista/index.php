@@ -2,6 +2,9 @@
 	session_start();
 	if(isset ($_SESSION['validacion']) && $_SESSION['validacion'] == 1) { // se modifico la validacion de la sessión
 ?>
+
+
+	 
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -39,10 +42,19 @@
 	<div class="tareas">
 		<div class="wrap">
 			<ul id="lista" class="lista">
+
+			<?php
+				include('modelo/conexion.php');
+
+				$var = new conexion();
+				$var->listarTareas();
+				$var->cerrar();
+			?>
 			
 			</ul>
 		</div>
 	</div>
+	
 	<script src="js/jquery.js"></script>
 	<script src="js/maintareas.js"></script>
 </body>

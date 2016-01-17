@@ -1,10 +1,10 @@
 <?php 
 	class conexion{
 		private $conexion;
-		private $server = "localhost";
-		private $usuario =  "root";//"esandex_admin";
-		private $pass = "admin";//"w8uiq9da";
-		private $db = "apptareas";//"esandex_apptareas";
+		private $server = "esandex.com";
+		private $usuario =  "esandex_admin";
+		private $pass = "w8uiq9da";
+		private $db = "esandex_apptareas";
 		private $user;
 		private $password;
 
@@ -125,50 +125,31 @@
 
 		public function eliminarTarea($id)
 		{
-			session_start();
-
-			//$res = $this->conexion->query(" select id,COUNT(*) from tareas where id  = '".$id."' and usuarios_id = '".$_SESSION['id']."'");
-			
-			//Validar si existe la atrea
-			$res = $this->conexion->query("select estado, usuarios_id from tareas where id = '".$id."' and usuarios_id = '".$_SESSION['id']."'");
-			
-			if(mysqli_num_rows($res ) > 0){
-				//la tarea existe
-				$this->conexion->query("UPDATE tareas set estado = 0 where id=''".$id."'");
-				echo "Se elimino la tarea";
-			}else{
-				//el latarea no existe
-				echo "la tarea no existe";
-			}
-
-
-			
+			$sql = "UPDATE tareas 
+					SET estado = 0 
+					WHERE id = {$id}";
+			$result = $this->conexion->query($sql) or die ($this->conexion->error);
+			echo "Se elimino la tarea nro: ". $id . $result;			
 		}
 
-		public function modificarTarea($titulo, $tarea){
+		public function modificarTarea($id){
 
-		//que la tarea no exista
-		  session_start();
-       $res =  $this->conexion->query("select titulo, usuarios_id from tareas where titulo = '".$titulo."' and usuarios_id = '".$_SESSION['id']."' ");
-        
-        if(mysqli_num_rows($res)>0)
-        {
-           //existe
-        	$this->conexion->query("UPDATE tareas set descripcion = '".$tarea."' where titulo = '".$titulo."'and usuarios_id='".$_SESSION['id']."'");
-           echo "Se actualizo la tarea"; 
-        }else{
-           echo "1";
-        }
+			echo "recibi el id: ".$id;
 
 		}
 
 		public function listarTareas(){
 			//session_start();
-			$consulta = $this->conexion->query("select descripcion from tareas where usuarios_id = '".$_SESSION['id']."'");
+			$sql = "SELECT 	id,
+							descripcion 
+					FROM tareas
+					WHERE usuarios_id = '{$_SESSION['id']}'
+						AND estado > 0";
+			$consulta = $this->conexion->query($sql);
 
 			while ($row = mysqli_fetch_array($consulta)) {
 			
-				echo "<li> <a>". $row['descripcion']. "</a> </li>";
+				echo "<li><a id='{$row['id']}'>{$row['descripcion']}</a> </li>";
 			
 			}
 		}

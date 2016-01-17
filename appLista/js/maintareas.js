@@ -65,26 +65,21 @@
 
 	function eliminarTarea(){
 		//var tarea = tareaInput.value;
-		var tarea = document.getElementsByTagName("li");
+		var id = $(this).children('a').attr('id');
+		console.log(id);
 		//var tarea = document.getElementById("tarea");
 		this.parentNode.removeChild(this);
+		
+		$.ajax({
+     	   	url: '../appLista/controlador/eliminarTarea.php',
+        	method: 'POST',
+        	data: { id: id },
+        	success: function(msg){
+           		console.log(msg);
+        	}
+    	});		
 
-
-		if(tarea != ''){
-
-			$.ajax({
-         	   	url: '../appLista/controlador/eliminarTarea.php',
-            	method: 'POST',
-            	data: { titulo: tarea },
-            	success: function(msg){
-               		console.log(msg);
-            	}
-        	});		
-
-		} else{
-			alert('el campo esta vacio');
-		}
-
+	
 		
 
 	};

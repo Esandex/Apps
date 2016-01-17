@@ -1,7 +1,7 @@
 <?php
 	include('../modelo/conexion.php');
-	$titulo = $_POST['titulo'];
+	$id = $_POST['id'];
 	$var = new conexion();
-	$var->eliminarTarea($titulo);
+	$var->eliminarTarea($id);
 	$var->cerrar();
 ?>

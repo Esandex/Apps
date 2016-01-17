@@ -1,35 +1,27 @@
 <?php
 	session_start();
 	if(isset ($_SESSION['validacion']) && $_SESSION['validacion'] == 1) { // se modifico la validacion de la sessión
-?>
-
-
-	 
+	include('modelo/conexion.php');
+	$var = new conexion();
+?>	 
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">	
 	<link rel="stylesheet"  href="css/main.css">
-	
-  
-	
 	<title>Listado de tareas</title>
 </head>
 <body>
-	
-
-
 	<div class="principal">
-			<a href ="vista/login.php" class="cerrar-sesion">Cerrar Sesion</a>
-			<p class ="title">Bienvenido
-				<?php
-				    echo $_SESSION['nombre'] ;
-				    echo " " ;
-				    echo $_SESSION['apellido'];
-			    ?>
-    		</p>
+		<a href ="vista/login.php" class="cerrar-sesion">Cerrar Sesion</a>
+		<p class ="title">Bienvenido
+			<?php
+			    echo $_SESSION['nombre'] ;
+			    echo " " ;
+			    echo $_SESSION['apellido'];
+		    ?>
+		</p>
 	
 		<div class="wrap">
 			<form action="" class="formulario">
@@ -44,9 +36,6 @@
 			<ul id="lista" class="lista">
 
 			<?php
-				include('modelo/conexion.php');
-
-				$var = new conexion();
 				$var->listarTareas();
 				$var->cerrar();
 			?>
@@ -61,7 +50,6 @@
 </html>
 <?php
 }else{
-    echo"Debes iniciar sesion antes de acceder a esta página"; 
     header("Location: vista/login.php");
 }
 ?>

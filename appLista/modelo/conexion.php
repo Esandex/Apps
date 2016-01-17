@@ -4,7 +4,7 @@
 		private $server = "esandex.com";
 		private $usuario =  "esandex_admin";
 		private $pass = "w8uiq9da";
-		private $db = "esandex_apptareas";
+		private $db = "esandex_desarrollo";
 		private $user;
 		private $password;
 
@@ -24,54 +24,33 @@
 
 		public function login($usuario, $pass){
 
-		$this->user = $usuario;
-		$this->password = $pass;
+			$this->user = $usuario;
+			$this->password = $pass;
 
-		$query = "select 	id, 
-							nombre, 
-							apellido, 
-							usuario, 
-							clave, 
-							rol_id1 
-				  from usuarios 
-				  where usuario = '".$this->user."' 
-				  and clave = '".$this->password."'";
+			$sql = "SELECT 	* 
+					  FROM users 
+					  WHERE USER = '{$this->user}'
+					  	AND PASS = '{$this->password}'";
 
-		$consulta = $this->conexion->query($query);
+			$consulta = $this->conexion->query($sql) or die($this->conexion->error);
+
+			$row = mysqli_fetch_array($consulta);
 
 
-		$row = mysqli_fetch_array($consulta);
 
-
-		if($row['rol_id1'] == 1 ){ //administrador
+		if($row['PASS'] == $this->password ){ //administrador
 
 			session_start();
-
 			$_SESSION['validacion'] = 1 ;
-			$_SESSION['nombre'] = $row['nombre'];
-            $_SESSION['apellido'] = $row['apellido'];
-            $_SESSION['id'] = $row['id'];
-
-			echo $row['nombre']; 
-
-		}else if($row['rol_id1'] == 2){//operario
-
-			session_start();
-
-			$_SESSION['validacion'] = 1 ;
-			$_SESSION['nombre'] = $row['nombre'];
-            $_SESSION['apellido'] = $row['apellido'];
-            $_SESSION['id'] = $row['id'];
-
-			echo $row['nombre']; 
+            $_SESSION['id'] = $row['USER_ID'];
+            $_SESSION['firtsname'] = $row['FIRSTNAME'];
+			echo $row['FIRSTNAME']; 
 
 		}else{
 
 			session_start();
-
 			$_SESSION['validacion'] = 0;
-
-			echo "1";
+			echo "error";
 		}
 	}//Hasta aca va el LOGIN 
 
@@ -105,29 +84,24 @@
 	
 	///AGREGAR Tareas
 
-	public function agregarTarea($tarea){
-
-		//que la tarea no exista
-		  session_start();
-       $res =  $this->conexion->query("select descripcion, usuarios_id from tareas where descripcion = '".$tarea."' and usuarios_id = '".$_SESSION['id']."' ");
-        
-        if(mysqli_num_rows($res)>0)
-        {
-            //Que el deseo existe
-            echo '1';
-        }else{
-            //Registrar el deseo
-            $this->conexion->query("insert into tareas(estado, descripcion, usuarios_id) values(1,  '".$tarea."', '".$_SESSION['id']."')");
-            echo "Se registro la tarea";
-        }
-
+	public function agregarTarea($tarea, $user_id){
+	    
+	    //Registrar el deseo
+	    $sql = "INSERT INTO tareas	(ESTADO, 
+	    							 DESCRIPCION, 
+	    							 USER_ID) 
+				VALUES (1,  
+						'{$tarea}', 
+						'{$user_id}')";
+	    $this->conexion->query($sql);
+	    echo "Se registro la tarea del usuario nro: " . $user_id;
 	}
 
 		public function eliminarTarea($id)
 		{
-			$sql = "UPDATE tareas 
-					SET estado = 0 
-					WHERE id = {$id}";
+			$sql = "UPDATE 	tareas 
+					SET 	ESTADO = 0 
+					WHERE 	ID_TAREA = '{$id}'";
 			$result = $this->conexion->query($sql) or die ($this->conexion->error);
 			echo "Se elimino la tarea nro: ". $id . $result;			
 		}
@@ -140,16 +114,15 @@
 
 		public function listarTareas(){
 			//session_start();
-			$sql = "SELECT 	id,
-							descripcion 
+			$sql = "SELECT 	*
 					FROM tareas
-					WHERE usuarios_id = '{$_SESSION['id']}'
+					WHERE USER_ID = '{$_SESSION['id']}'
 						AND estado > 0";
 			$consulta = $this->conexion->query($sql);
 
 			while ($row = mysqli_fetch_array($consulta)) {
 			
-				echo "<li><a id='{$row['id']}'>{$row['descripcion']}</a> </li>";
+				echo "<li><a id='{$row['ID_TAREA']}'>{$row['DESCRIPCION']}</a> </li>";
 			
 			}
 		}

@@ -16,17 +16,14 @@
 	<div class="principal">
 		<a href ="vista/login.php" class="cerrar-sesion">Cerrar Sesion</a>
 		<p class ="title">Bienvenido
-			<?php
-			    echo $_SESSION['nombre'] ;
-			    echo " " ;
-			    echo $_SESSION['apellido'];
-		    ?>
+			<?php echo $_SESSION['firtsname']; ?>
 		</p>
 	
 		<div class="wrap">
-			<form action="" class="formulario">
+			<form  class="formulario">
+				<input type="hidden" id="user_id" value="<?= $_SESSION['id'] ?>">
 				<input type="text" id="tareaInput" placeholder="Agrega tu tarea">
-				<input type="button" class="boton" id="btn-agregar" value="Agregar tarea">
+				<input type="submit" class="boton" id="btn-agregar" value="Agregar tarea">
 				
 			</form> 
 		</div>

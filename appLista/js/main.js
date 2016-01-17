@@ -12,7 +12,7 @@ $(document).ready(function(){
 				method: 'POST',
 				data:{usuario: user, pass: pass},
 				success: function(msg){
-					if (msg == '1'){
+					if (msg == 'error'){
 						$('#mensaje').html('Datos incorrectos');
 					}else 
 						if(msg.search(/mysql/) > -1 )

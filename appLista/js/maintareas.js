@@ -8,11 +8,13 @@
 	//funciones
 	 function agregarTarea()
 	 {
-		var tarea = tareaInput.value, 
-		nuevaTarea = document.createElement("li"),
-		enlace = document.createElement("a"),
-		contenido = document.createTextNode(tarea);
-
+		var tarea = tareaInput.value,
+			user_id = $('#user_id').val(),
+			nuevaTarea = document.createElement("li"),
+			enlace = document.createElement("a"),
+			contenido = document.createTextNode(tarea);
+			console.log(user_id);
+			tareaInput.value = '';
 		if(tarea === "")
 		{
 			console.log("Agrega una tarea valida","por favor");
@@ -22,40 +24,25 @@
 		}
 		else
 		{
-				//Agregamos el contenido al enlace
-				enlace.appendChild(contenido);
-				//Lee establecemos un atributo href
-				enlace.setAttribute("id","titulo");
-				//Agregamos el enlacea (a) a la nueva tarea (li)
-				nuevaTarea.appendChild(enlace);
-				//Agregamos la nueva tarea a la lista
-				lista.appendChild(nuevaTarea);
-
-				tareaInput.value = "";
-
-				for(var i = 0; i <= lista.children.length-1; i++)
-				{
-					lista.children[i].addEventListener("click", function(){
-					$(this).remove();
-					});	
-				}
-
+			
 				$.ajax({
          	   	url: '../appLista/controlador/agregarTarea.php',
             	method: 'POST',
-            	data: { tarea: tarea},
+            	data: { tarea: tarea, user_id: user_id},
             	success: function(msg){
                		if(msg == '1'){
                    	//Error
                    		$('#mensaje').html('La tarea que ingresaste ya se encuentra registrada');
                		}else{
                    //Se registro
-                   $('#mensaje').html(msg);
+                   		console.log(msg);
+                   		setTimeout(function(){window.location.href = '';},300);
                		}
             	}
         	});		
 
 			}
+		return false;	
 	};
 	function comprobarInput(){
 		tareaInput.className = "";

@@ -24,9 +24,27 @@
 		}
 		else
 		{
+
+				//Agregamos el contenido al enlace
+				enlace.appendChild(contenido);
+				//Lee establecemos un atributo href
+				enlace.setAttribute("href","#");
+				//Agregamos el enlacea (a) a la nueva tarea (li)
+				nuevaTarea.appendChild(enlace);
+				//Agregamos la nueva tarea a la lista
+				lista.appendChild(nuevaTarea);
+
+				tareaInput.value = "";
+
+				for(var i = 0; i <= lista.children.length-1; i++)
+				{
+					lista.children[i].addEventListener("click", function(){
+						this.parentNode.removeChild(this);
+					});
+				}
 			
 				$.ajax({
-         	   	url: '../appLista/controlador/agregarTarea.php',
+         	   	url: '../controlador/agregarTarea.php',
             	method: 'POST',
             	data: { tarea: tarea, user_id: user_id},
             	success: function(msg){
@@ -36,7 +54,7 @@
                		}else{
                    //Se registro
                    		console.log(msg);
-                   		setTimeout(function(){window.location.href = '';},300);
+                   		window.location.href = '';
                		}
             	}
         	});		
@@ -58,7 +76,7 @@
 		this.parentNode.removeChild(this);
 		
 		$.ajax({
-     	   	url: '../appLista/controlador/eliminarTarea.php',
+     	   	url: '../controlador/eliminarTarea.php',
         	method: 'POST',
         	data: { id: id },
         	success: function(msg){
@@ -82,6 +100,4 @@
 		lista.children[i].addEventListener("click", eliminarTarea);
 	}
 }());
-
-
 

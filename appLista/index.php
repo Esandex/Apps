@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="principal">
-		<a href ="vista/login.php" class="cerrar-sesion">Cerrar Sesion</a>
+		
 		<p class ="title">Bienvenido
 			<?php echo $_SESSION['firtsname']; ?>
 		</p>
@@ -40,7 +40,9 @@
 			</ul>
 		</div>
 	</div>
-	
+	<a href ="vista/login.php" class="cerrar-sesion">
+		          Cerrar Sesión <div class="icon-switch"></div>
+	</a>
 	<script src="js/jquery.js"></script>
 	<script src="js/maintareas.js"></script>
 </body>

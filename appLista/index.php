@@ -20,11 +20,10 @@
 		</p>
 	
 		<div class="wrap">
-			<form  class="formulario">
+			<form  class="formulario" method="post">
 				<input type="hidden" id="user_id" value="<?= $_SESSION['id'] ?>">
 				<input type="text" id="tareaInput" placeholder="Agrega tu tarea">
-				<input type="submit" class="boton" id="btn-agregar" value="Agregar tarea">
-				
+				<input type="submit" class="boton" id="btn-agregar" value="Agregar tarea">				
 			</form> 
 		</div>
 	</div>

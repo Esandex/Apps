@@ -44,7 +44,7 @@
 				}
 			
 				$.ajax({
-         	   	url: '../controlador/agregarTarea.php',
+         	   	url: 'controlador/agregarTarea.php',
             	method: 'POST',
             	data: { tarea: tarea, user_id: user_id},
             	success: function(msg){
@@ -54,7 +54,11 @@
                		}else{
                    //Se registro
                    		console.log(msg);
-                   		window.location.href = '';
+                   		setTimeout(function(){
+                   						window.location.href = ''; 
+                   						console.log('recarga');
+                   					}, 300);
+                   		return false;
                		}
             	}
         	});		
@@ -76,7 +80,7 @@
 		this.parentNode.removeChild(this);
 		
 		$.ajax({
-     	   	url: '../controlador/eliminarTarea.php',
+     	   	url: 'controlador/eliminarTarea.php',
         	method: 'POST',
         	data: { id: id },
         	success: function(msg){
